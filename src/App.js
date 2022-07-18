@@ -1,34 +1,30 @@
+import React from 'react';
 import './App.scss';
-
-import Header from './components/Header';
-import About from './components/About';
-import Best from './components/Best';
-import Footer from './components/Footer';
+import { Routes,
+        Route 
+              } from 'react-router-dom';
+import HomePage from './Pages/Home';
+import OurCoffee from './Pages/OurCoffee';
+import Pleasure from './Pages/Pleasure';
 
 function App() {
-  const arr = [
-    {imageUrl: './images/1.jpg', descr: 'Solimo Coffee Beans 2 kg', price: 10.73},
-    {imageUrl: './images/2.jpg', descr: 'Presto Coffee Beans 1 kg', price: 15.99},
-    {imageUrl: './images/3.jpg', descr: 'AROMISTICO Coffee 1 kg', price: 6.99},
-  ]
+  const [items, setItems] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://62d5b91415ad24cbf2cc71d5.mockapi.io/items')
+    .then(res => res.json())
+    .then(arr => setItems(arr))
+  }, [])
+  
   return (
     <div className="App">
-      <Header />
-      <About />
-      <div className="best">
-        <div className="best__inner">
-        <h3 className="best__title">Our best</h3>
-        <div className="best__cards">
-        {arr.map((item, index) => (
-          <Best key={index} {...item}/>
-        ))}
-        </div>
-        </div>
-      </div>
-      
-      
-      <Footer />
+      <Routes>
+        <Route path='/' element={<HomePage arr={items}/>}/>
+        <Route path='/ourcoffee' element={<OurCoffee arr={items}/>}/>
+        <Route path='/pleasure' element={<Pleasure />}/>
+      </Routes>
     </div>
+    
   );
 }
 

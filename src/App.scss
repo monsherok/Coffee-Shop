@@ -1,16 +1,30 @@
 .header {
   background-color: rgba(175, 155, 116, 1);
-  background-image: url("bg.jpg");
+  background-image: url("./bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 30px 0;
   color: #fff;
+  &__ourcoffee {
+    background-image: url("./bg-2.jpg");
+    h1 {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+  }
+  &__pleasure {
+    background-image: url("./bg-3.jpg");
+    h1 {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+  }
   &__menu {
     display: flex;
     align-items: baseline;
     max-width: 1024px;
     margin: 0 auto;
-    margin-bottom: 110px;
+    margin-bottom: 60px;
   }
   &__menu-logo {
     display: flex;
@@ -93,6 +107,7 @@
       top: 40%;
       width: 60px;
       height: 1px;
+      background-color: #fff;
       border: 1px solid #ffffff;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     }
@@ -103,6 +118,7 @@
       top: 40%;
       width: 60px;
       height: 1px;
+      background-color: #fff;
       border: 1px solid #ffffff;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     }
@@ -155,6 +171,7 @@
       top: 40%;
       width: 60px;
       height: 1px;
+      background-color: #000;
       border: 1px solid #000;
     }
     &::after {
@@ -164,6 +181,7 @@
       top: 40%;
       width: 60px;
       height: 1px;
+      background-color: #000;
       border: 1px solid #000;
     }
   }
@@ -218,7 +236,7 @@
     justify-content: flex-end;
     flex-direction: column;
     cursor: pointer;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
     &:hover {
       transform: translateY(-3px);
     }
@@ -226,6 +244,8 @@
   // .best__card-image
   &__card-image {
     margin-bottom: 15px;
+    max-height: 130px;
+    height: 100%;
   }
   // .best__card-description
   &__card-description {
@@ -237,9 +257,9 @@
   // .best__card-price
   &__card-price {
     font-weight: 700;
-font-size: 14px;
-line-height: 20px;
-align-self: end;
+    font-size: 14px;
+    line-height: 20px;
+    align-self: end;
   }
 }
 .footer {
@@ -305,5 +325,190 @@ align-self: end;
       height: 1px;
       border: 1px solid #000;
     }
+  }
+}
+
+.about__beans {
+  display: flex;
+  margin-top: 70px;
+  &-image {
+    width: 272px;
+    height: 355px;
+    filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, 0.25));
+    margin-right: 80px;
+    img {
+      height: 100%;
+    }
+  }
+  .about {
+    padding-top: 0;
+    max-width: 346px;
+    &__decoration {
+      margin-bottom: 25px;
+    }
+    p {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  }
+}
+.ourcoffee__container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ourcoffee__decoration {
+  width: 240px;
+  height: 1px;
+  background-color: #000;
+  border: 1px solid #000000;
+  margin-bottom: 60px;
+}
+
+.ourcoffee {
+  // .ourcoffee__items
+  &__items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  // .ourcoffee__items-filters
+  &__items-filters {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 61px;
+  }
+  // .ourcoffee__items-search
+  &__items-search {
+    display: flex;
+    align-items: center;
+    label {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      margin-right: 19px;
+    }
+    input {
+      width: 180px;
+      height: 30px;
+      background: #ffffff;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+      border: none;
+      border-radius: 4px;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  // .ourcoffee__items-buttons
+  &__items-buttons {
+    display: flex;
+    align-items: center;
+  }
+  // .ourcoffee__items-buttons-text
+  &__items-buttons-text {
+    margin-right: 35px;
+    font-size: 14px;
+  }
+  // .ourcoffee__items-button
+  &__items-button {
+    width: 75px;
+    height: 30px;
+    background: #ffffff;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+    transition: all ease .3s;
+    &:hover {
+      box-shadow: inset 0px 0px 4px rgba(0,0,0,0.3);
+    }
+    &.active {
+      box-shadow: inset 0px 0px 4px rgba(0,0,0,0.3);
+    }
+    &:nth-child(2) {
+      background: #ffffff;
+      border-radius: 4px 0px 0px 4px;
+    }
+    &:last-child {
+      background: #ffffff;
+      border-radius: 0px 4px 4px 0px;
+    }
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+  // .ourcoffee__items-inner
+  &__items-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  // .ourcoffee__item
+  &__item {
+    width: 220px;
+    background-color: #fff;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.25));
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 37px 23px 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    cursor: pointer;
+    transition: transform ease .3s;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  // .ourcoffee__item-card-image
+  &__item-card-image {
+    margin-bottom: 10px;
+    max-height: 130px;
+    height: 100%;
+  }
+  // .ourcoffee__item-card-description
+  &__item-card-description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  // .ourcoffee__item-card-country
+  &__item-card-country {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    align-self: flex-end;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  // .ourcoffee__item-card-price
+  &__item-card-price {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    align-self: flex-end;
+    color: #000000;
+    margin-bottom: 12px;
   }
 }

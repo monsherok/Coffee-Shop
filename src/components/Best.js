@@ -1,16 +1,16 @@
-const Best = (props) => {
-  const {imageUrl, descr, price} = props;
-  const onClickCard = () => {
-    alert(descr)
-  }
-   return (
-    <div className="best__card" onClick={onClickCard}>
-      <img className='best__card-image' src={imageUrl} alt={descr} />
-      <div className="best__card-description">{descr}</div>
-      <div className="best__card-price">{price}$</div>
-  </div>
-   )
+import BestCard from './BestCard';
+
+function Best({arr}) {
+  return (
+    <div className="best">
+      <div className="best__inner">
+        <h3 className="best__title">Our best</h3>
+        <div className="best__cards">
+          {arr.map((item, index) => ( item.best && <BestCard key={index} {...item}/>))}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default Best;
-
